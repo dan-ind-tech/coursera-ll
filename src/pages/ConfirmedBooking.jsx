@@ -3,6 +3,7 @@ import { Button, Grid, Typography } from "@mui/material";
 const ConfirmedBooking = () => {
   return (
     <Grid
+      component="section"
       aria-labelledby="booking-confirmed-title"
       height="100vh"
       width="100%"

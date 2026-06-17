@@ -7,21 +7,17 @@ const AboutLittleLemon = () => {
       component="section"
       aria-labelledby="about-title"
       container
-      sx={{
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-        flexWrap: "nowrap",
-      }}
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="row"
+      flexWrap="nowrap"
     >
       <Grid
-        sx={{
-          textAlign: "center",
-          flexDirection: "column",
-          display: "flex",
-          alignItems: "start",
-          flex: 1,
-        }}
+        textAlign="center"
+        flexDirection="column"
+        display="flex"
+        alignItems="start"
+        flex={1}
       >
         <Typography id="about-title" variant="h4" component="h2">
           Little Lemon
@@ -36,15 +32,9 @@ const AboutLittleLemon = () => {
           the neighborhood, known for its warm hospitality and delicious food.
         </Typography>
       </Grid>
-      <Grid className="about-image-stack" container sx={{ flex: 1 }}>
-        <img
-          src="/assets/entree.jpg"
-          alt="Little Lemon restaurant entree"
-        />
-        <img
-          src="/assets/fish.jpg"
-          alt="Grilled fish dish at Little Lemon"
-        />
+      <Grid className="about-image-stack" container flex={1}>
+        <img src="/assets/entree.jpg" alt="Little Lemon restaurant entree" />
+        <img src="/assets/fish.jpg" alt="Grilled fish dish at Little Lemon" />
       </Grid>
     </Grid>
   );

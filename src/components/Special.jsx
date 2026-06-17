@@ -5,11 +5,9 @@ const Special = ({ image, name, description }) => {
     <Grid
       container
       direction="column"
-      sx={{
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
     >
       <Card
         className="special-card"
@@ -20,7 +18,7 @@ const Special = ({ image, name, description }) => {
         <img
           src={image}
           alt={`${name} special`}
-          style={{ maxWidth: 180, maxHeight: 200 }}
+          style={{ maxWidth: 180, height: 80 }}
         />
         <h2 id={`${name.toLowerCase()}-special-title`}>{name}</h2>
         <p>{description}</p>

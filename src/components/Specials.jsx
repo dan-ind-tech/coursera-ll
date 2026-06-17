@@ -32,17 +32,17 @@ const Specials = () => {
       component="section"
       aria-labelledby="specials-title"
       container
-      sx={{ alignItems: "center", justifyContent: "center", gap: 4 }}
+      alignItems="center"
+      justifyContent="center"
+      gap={4}
     >
       <Grid
-        sx={{
-          textAlign: "center",
-          width: "100%",
-          flexDirection: "row",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
+        textAlign="center"
+        width="100%"
+        flexDirection="row"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
       >
         <Typography id="specials-title" variant="h4" component="h2">
           Specials
@@ -61,10 +61,10 @@ const Specials = () => {
         component="ul"
         aria-label="Little Lemon specials"
         container
+        alignItems="center"
+        justifyContent="center"
+        gap={4}
         sx={{
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 4,
           listStyle: "none",
           margin: 0,
           padding: 0,

@@ -58,7 +58,10 @@ const Main = () => {
   const submitForm = (formData) => {
     if (submitBooking(formData)) {
       navigate("/booking-confirmed");
+      return true;
     }
+
+    return false;
   };
 
   return (

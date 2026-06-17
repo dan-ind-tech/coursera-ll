@@ -7,13 +7,11 @@ const Footer = () => {
       className="site-footer"
       component="footer"
       container
-      sx={{
-        alignItems: "center",
-        flexDirection: "row",
-        flexWrap: "nowrap",
-      }}
+      alignItems="center"
+      flexDirection="row"
+      flexWrap="nowrap"
     >
-      <Grid container sx={{ marginRight: 4, width: "200px" }}>
+      <Grid container marginRight={4} width="200px">
         <img
           src="/assets/entree.jpg"
           alt="Little Lemon plated entree"
@@ -25,13 +23,11 @@ const Footer = () => {
       <Grid
         component="nav"
         aria-labelledby="footer-navigation-title"
-        sx={{
-          flexDirection: "column",
-          display: "flex",
-          alignSelf: "start",
-          width: "150px",
-          gap: 1,
-        }}
+        flexDirection="column"
+        display="flex"
+        alignSelf="start"
+        width="150px"
+        gap={1}
       >
         <Typography id="footer-navigation-title" variant="h6" component="h2">
           Navigation
@@ -68,13 +64,11 @@ const Footer = () => {
       <Grid
         component="nav"
         aria-labelledby="footer-contact-title"
-        sx={{
-          flexDirection: "column",
-          display: "flex",
-          alignSelf: "start",
-          width: "150px",
-          gap: 1,
-        }}
+        flexDirection="column"
+        display="flex"
+        alignSelf="start"
+        width="150px"
+        gap={1}
       >
         <Typography id="footer-contact-title" variant="h6" component="h2">
           Contact
@@ -104,13 +98,11 @@ const Footer = () => {
       <Grid
         component="nav"
         aria-labelledby="footer-social-title"
-        sx={{
-          flexDirection: "column",
-          display: "flex",
-          alignSelf: "start",
-          width: "150px",
-          gap: 1,
-        }}
+        flexDirection="column"
+        display="flex"
+        alignSelf="start"
+        width="150px"
+        gap={1}
       >
         <Typography id="footer-social-title" variant="h6" component="h2">
           Social Media

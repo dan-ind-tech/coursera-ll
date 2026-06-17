@@ -26,17 +26,17 @@ const Testimonials = () => {
       component="section"
       aria-labelledby="testimonials-title"
       container
-      sx={{ alignItems: "center", justifyContent: "center", gap: 4 }}
+      alignItems="center"
+      justifyContent="center"
+      gap={4}
     >
       <Grid
-        sx={{
-          textAlign: "center",
-          width: "100%",
-          flexDirection: "row",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
+        textAlign="center"
+        width="100%"
+        flexDirection="row"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
       >
         <Typography id="testimonials-title" variant="h4" component="h2">
           Testimonials
@@ -46,10 +46,10 @@ const Testimonials = () => {
         component="ul"
         aria-label="Customer testimonials"
         container
+        alignItems="center"
+        justifyContent="center"
+        gap={4}
         sx={{
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 4,
           listStyle: "none",
           margin: 0,
           padding: 0,

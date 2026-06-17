@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Grid, MenuItem, TextField } from "@mui/material";
+import { Alert, Button, Grid, MenuItem, TextField } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV2";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -13,6 +13,7 @@ const BookingForm = ({
   submitForm,
 }) => {
   const [step, setStep] = useState(0);
+  const [submitError, setSubmitError] = useState("");
 
   const methods = useForm({
     defaultValues: {
@@ -44,7 +45,12 @@ const BookingForm = ({
   };
 
   const onSubmit = (values) => {
-    submitForm(values);
+    setSubmitError("");
+    const isSubmitted = submitForm(values);
+
+    if (!isSubmitted) {
+      setSubmitError("Unable to confirm your reservation. Please try again.");
+    }
   };
 
   const handleDateChange = (newDate, onChange) => {
@@ -56,16 +62,21 @@ const BookingForm = ({
   return (
     <Grid
       container
-      sx={{
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      alignItems="center"
+      justifyContent="center"
+      width="100%"
     >
       <FormProvider {...methods}>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <form aria-label="Booking form" onSubmit={handleSubmit(onSubmit)}>
             {step === 0 ? (
-              <Grid container direction="column" gap={2} width={"500px"}>
+              <Grid
+                container
+                direction="column"
+                gap={2}
+                width={{ xs: "100%", sm: "500px" }}
+              >
+                {submitError && <Alert severity="error">{submitError}</Alert>}
                 <Controller
                   name="date"
                   control={control}
@@ -129,7 +140,12 @@ const BookingForm = ({
                 </Button>
               </Grid>
             ) : (
-              <Grid container direction="column" gap={2} width={"500px"}>
+              <Grid
+                container
+                direction="column"
+                gap={2}
+                width={{ xs: "100%", sm: "500px" }}
+              >
                 <Controller
                   name="firstName"
                   control={control}

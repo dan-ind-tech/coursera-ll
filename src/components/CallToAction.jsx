@@ -7,16 +7,16 @@ const CallToAction = () => {
       component="section"
       aria-labelledby="hero-title"
       container
-      sx={{ alignItems: "center", justifyContent: "center", gap: 4 }}
+      alignItems="center"
+      justifyContent="center"
+      gap={4}
     >
       <Grid
-        sx={{
-          width: "100%",
-          flexDirection: "column",
-          display: "flex",
-          alignItems: "start",
-          flex: 1,
-        }}
+        width="100%"
+        flexDirection="column"
+        display="flex"
+        alignItems="start"
+        flex={1}
       >
         <Typography id="hero-title" variant="h4" component="h1">
           Little Lemon
@@ -39,7 +39,7 @@ const CallToAction = () => {
           Reserve a Table
         </Button>
       </Grid>
-      <Grid sx={{ flex: 1 }}>
+      <Grid flex={1}>
         <img
           src="/assets/salad.jpg"
           alt="Little Lemon Mediterranean salad"

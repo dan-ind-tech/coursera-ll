@@ -5,13 +5,12 @@ function Reservations({ availableTimes, dispatchAvailableTimes, submitForm }) {
   return (
     <Grid
       container
-      sx={{
-        alignItems: "center",
-        justifyContent: "start",
-        flexDirection: "column",
-        gap: 4,
-        height: "100vh",
-      }}
+      alignItems="center"
+      justifyContent="start"
+      flexDirection="column"
+      gap={4}
+      minHeight="100vh"
+      paddingX={2}
     >
       <h1>Reservations</h1>
 

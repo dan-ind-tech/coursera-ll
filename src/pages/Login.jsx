@@ -1,5 +1,5 @@
-function Homepage() {
-  return <h1>Welcome to Little Lemon!</h1>;
+function Login() {
+  return <h1>Login</h1>;
 }
 
-export default Homepage;
+export default Login;

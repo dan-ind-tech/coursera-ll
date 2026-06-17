@@ -5,11 +5,9 @@ const Testimonial = ({ name, rating }) => {
     <Grid
       container
       direction="column"
-      sx={{
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
     >
       <Card
         className="testimonial-card"
