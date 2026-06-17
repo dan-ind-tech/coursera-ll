@@ -1,13 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap");
+
+:root {
+  --little-lemon-green: #495e57;
+  --little-lemon-yellow: #f4ce14;
+  --little-lemon-coral: #ee9972;
+  --little-lemon-peach: #fbdabb;
+  --little-lemon-cloud: #edefee;
+  --little-lemon-charcoal: #333333;
+  --little-lemon-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  color: var(--little-lemon-charcoal);
+  background: var(--little-lemon-cloud);
+  font-family: "Karla", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.MuiTypography-h4,
+.MuiTypography-h6 {
+  font-family: "Markazi Text", Georgia, serif;
+  font-weight: 600;
+}
+
+p,
+a,
+button,
+.MuiTypography-body1,
+.MuiButton-root {
+  font-family: "Karla", Arial, sans-serif;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
