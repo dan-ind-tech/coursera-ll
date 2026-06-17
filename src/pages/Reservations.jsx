@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import BookingForm from "../components/BookingForm";
 
-function Reservations({ availableTimes, dispatchAvailableTimes }) {
+function Reservations({ availableTimes, dispatchAvailableTimes, submitForm }) {
   return (
     <Grid
       container
@@ -18,6 +18,7 @@ function Reservations({ availableTimes, dispatchAvailableTimes }) {
       <BookingForm
         availableTimes={availableTimes}
         dispatchAvailableTimes={dispatchAvailableTimes}
+        submitForm={submitForm}
       />
     </Grid>
   );

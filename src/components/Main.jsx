@@ -1,13 +1,14 @@
 import { useReducer } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import AboutLittleLemon from "./AboutLittleLemon";
 import Homepage from "../pages/Homepage";
 import Menu from "../pages/Menu";
 import Reservations from "../pages/Reservations";
 import OrderOnline from "../pages/OrderOnline";
 import Login from "../pages/Login";
+import ConfirmedBooking from "../pages/ConfirmedBooking";
 
-export const initializeTimes = () => [
+export const fallbackTimes = [
   "17:00",
   "17:30",
   "18:00",
@@ -21,13 +22,44 @@ export const initializeTimes = () => [
   "22:00",
 ];
 
-export const updateTimes = () => initializeTimes();
+const getAvailableTimes = (date) => {
+  if (typeof window !== "undefined" && typeof window.fetchAPI === "function") {
+    return window.fetchAPI(date);
+  }
+
+  return fallbackTimes;
+};
+
+export const initializeTimes = () => getAvailableTimes(new Date());
+
+export const updateTimes = (availableTimes, action) => {
+  if (action.type === "dateChanged") {
+    return getAvailableTimes(action.date);
+  }
+
+  return availableTimes;
+};
+
+export const submitBooking = (formData) => {
+  if (typeof window !== "undefined" && typeof window.submitAPI === "function") {
+    return window.submitAPI(formData);
+  }
+
+  return true;
+};
 
 const Main = () => {
+  const navigate = useNavigate();
   const [availableTimes, dispatchAvailableTimes] = useReducer(
     updateTimes,
     initializeTimes()
   );
+
+  const submitForm = (formData) => {
+    if (submitBooking(formData)) {
+      navigate("/booking-confirmed");
+    }
+  };
 
   return (
     <main id="main-content" className="main-content" aria-label="Main content">
@@ -41,9 +73,11 @@ const Main = () => {
             <Reservations
               availableTimes={availableTimes}
               dispatchAvailableTimes={dispatchAvailableTimes}
+              submitForm={submitForm}
             />
           }
         />
+        <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
         <Route path="/orderOnline" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
       </Routes>

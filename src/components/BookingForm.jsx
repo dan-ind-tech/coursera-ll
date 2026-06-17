@@ -7,7 +7,11 @@ import { Controller, FormProvider, useForm } from "react-hook-form";
 import { yupResolver as resolveYup } from "@hookform/resolvers/yup";
 import { bookingFormValidation } from "./bookingFormValidation";
 
-const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
+const BookingForm = ({
+  availableTimes,
+  dispatchAvailableTimes,
+  submitForm,
+}) => {
   const [step, setStep] = useState(0);
 
   const methods = useForm({
@@ -40,7 +44,7 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
   };
 
   const onSubmit = (values) => {
-    console.log("Booking submitted", values);
+    submitForm(values);
   };
 
   const handleDateChange = (newDate, onChange) => {
